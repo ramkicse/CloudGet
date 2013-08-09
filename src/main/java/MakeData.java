@@ -75,7 +75,7 @@ public class MakeData extends HttpServlet {
             webClient.getOptions().setUseInsecureSSL(true);
             webClient.setJavaScriptEnabled(false);
             final HtmlPage page = webClient.getPage("https://filestream.me/");
-            out.println(page.getTitleText());
+            //out.println(page.getTitleText());
             System.out.println("no of forms : " + page.getForms().size());
             HtmlForm form = page.getForms().get(1);
             final HtmlTextInput textField = form.getInputByName("login");
@@ -98,12 +98,12 @@ public class MakeData extends HttpServlet {
 
                         for (DomElement celldomElement : domElement.getChildElements()) {
                             if (flag) {
-                                out.println(celldomElement.getTagName());
+                               // out.println(celldomElement.getTagName());
                                 String link = celldomElement.getAttribute("onclick");
                                 String http = link.substring(link.indexOf('\'') + 1, link.indexOf('\'', link.indexOf('\'') + 1));
 
-                                out.println(celldomElement.getAttribute("onclick") + "<br/>");
-                                out.println(http + "<br/>");
+                              //  out.println(celldomElement.getAttribute("onclick") + "<br/>");
+                               // out.println(http + "<br/>");
                                 allLinks.add(http);
                                 flag = false;
                             }
