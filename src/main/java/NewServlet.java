@@ -83,12 +83,13 @@ public class NewServlet extends HttpServlet {
         int bytedRead;
         int count = 0;
         int dataCompleted = data.getTotalCompleted();
+        int size=data.getSize();
         System.out.println(fileInputStream.available());
         while (fileInputStream.available() > 0) {
             bytedRead = fileInputStream.read(buffer);
 
             if (dataCompleted-1 < count) {
-                if (dataCompleted + data.getSize() > count) {
+                if (dataCompleted + size > count) {
                     byte[] encVal = c.update(buffer, 0, bytedRead);
                     sos.write(encVal);
                 }
