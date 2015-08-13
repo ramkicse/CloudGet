@@ -21,8 +21,6 @@ import javax.servlet.http.HttpServletResponse;
 public class FileSize extends HttpServlet {
 
     /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
      *
      * @param request servlet request
      * @param response servlet response
@@ -38,19 +36,23 @@ public class FileSize extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
+
             out.println("<title>Size of File</title>");
+
             out.println("</head>");
 
             String path = System.getenv("OPENSHIFT_JBOSSAS_DIR");
             File file = new File(path + "test.zip");
 
             out.println("<body>");
+
             out.println("<h1>File Size : " + (new FileInputStream(file).available()) / (1024*1024) + " MB");
             out.println("<h1>Servlet size path at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         } catch (Exception e) {
             out.println("<h1>Error Thrown : " + e.getMessage());
+
         } finally {
             out.close();
         }
@@ -58,7 +60,6 @@ public class FileSize extends HttpServlet {
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
-     * Handles the HTTP <code>GET</code> method.
      *
      * @param request servlet request
      * @param response servlet response
@@ -72,7 +73,6 @@ public class FileSize extends HttpServlet {
     }
 
     /**
-     * Handles the HTTP <code>POST</code> method.
      *
      * @param request servlet request
      * @param response servlet response

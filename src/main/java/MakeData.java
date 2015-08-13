@@ -99,8 +99,10 @@ public class MakeData extends HttpServlet {
                         for (DomElement celldomElement : domElement.getChildElements()) {
                             if (flag) {
                                // out.println(celldomElement.getTagName());
+
                                 String title=celldomElement.getAttribute("title");
                                 if("Download".equals(title)){
+
 
 
 
@@ -111,7 +113,9 @@ public class MakeData extends HttpServlet {
                                // out.println(http + "<br/>");
                                 allLinks.add(http);
                                 flag = false;
+
                                 }
+
                             }
 
 
