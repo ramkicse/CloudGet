@@ -100,8 +100,8 @@ public class MakeData extends HttpServlet {
                             if (flag) {
                                // out.println(celldomElement.getTagName());
 
-                                String title=celldomElement.getAttribute("title");
-                                if("Download".equals(title)){
+                                    String title=celldomElement.getAttribute("title");
+                                if("Download".equals(title)|| "Downloads".equals(title)){
 
 
 
